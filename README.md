@@ -9,3 +9,8 @@ To run the main program you will need to install the Python Imaging Library Pill
 
 ## Running the Code
 Run `python main.py --media_dir {path to your media directory}` to trim and replace all jpeg files.
+
+## To-Dos (for developers)
+- [ ] Adapt for other image formats (.png, .tif etc.)
+- [ ] Modify for background colors other than white
+- [ ] Implement a feature to allow custom background colors (colors equal or similar to corner pixel colors)
