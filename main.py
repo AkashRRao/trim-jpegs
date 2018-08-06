@@ -26,21 +26,23 @@ def trim_and_replace(filenameArray = ""):
         trimmedIm = trim(im,'white')
         trimmedIm.save(filename,format=im.format)
 
-parser = argparse.ArgumentParser(description='Trim all .jpegs files in the media_dir.')
-parser.add_argument('--media_dir', help='directory where media (jpeg) files are stored')
 
-args = parser.parse_args()
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description='Trim all .jpegs files in the media_dir.')
+    parser.add_argument('--media_dir', help='directory where media (jpeg) files are stored')
 
-if not args.media_dir:
-    exit("Please specify media_dir using --videoid /path/to/media_directory")
-else:
-    media_directory = args.media_dir
+    args = parser.parse_args()
 
-filenames = [] # list of all the jpeg filenames in the pwd.
+    if not args.media_dir:
+        exit("Please specify media_dir using --media_dir /path/to/media_directory")
+    else:
+        media_directory = args.media_dir
 
-for file in os.listdir(media_directory):
-    if file.endswith(".jpg"):
-        filenames.append(file)
+    filenames = [] # list of all the jpeg filenames in the pwd.
 
-# trim all the jpeg files in list 'filename'
-trim_and_replace(filenames)
+    for file in os.listdir(media_directory):
+        if file.endswith(".jpg"):
+            filenames.append(file)
+
+    # trim all the jpeg files in list 'filename'
+    trim_and_replace(filenames)
