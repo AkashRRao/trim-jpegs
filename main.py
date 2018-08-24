@@ -46,3 +46,5 @@ if __name__ == "__main__":
 
     # trim all the jpeg files in list 'filename'
     trim_and_replace(filenames)
+
+# test comment 
